@@ -1,10 +1,23 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import App from './App'
+// import Projects from './Projects'
+import Layout from '../src/layers/Layout'
 import './index.css'
-import App from './App.jsx'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <BrowserRouter basename="/Kyungwook-portfolio">
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          {/* INDEX 엘리먼트 : App.jsx */}
+          <Route index element={<App />} /> 
+
+          {/* PATH 엘리먼트 */}
+          {/* <Route path="projects" element={<Projects />} /> */}
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>,
 )
