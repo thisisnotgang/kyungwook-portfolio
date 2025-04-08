@@ -1,7 +1,7 @@
 /* Header.css */
 .site-header {
   background-color: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
   position: fixed;
   top: 0;
   z-index: 100;
@@ -9,12 +9,36 @@
 }
 
 .site-header .header-container {
-  max-width: 1200px;
+  max-width: 968px;
   margin: 0 auto;
-  padding: 15px 20px;
+  padding: 25px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: 'esamanru';
+  gap: 1rem;
+}
+
+.site-header .header-container .main-logo {
+  display: flex;
+  align-items: flex-end; 
+  gap: 10px;
+}
+
+.site-header .header-container .main-logo p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.site-header .header-container .main-logo span {
+  margin: 0;
+  font-size: 0.5rem;
+  font-weight: 200;
+}
+
+.site-header .header-container .main-nav {
+  margin-left: auto;
 }
 
 .site-header .header-container .main-nav ul {
@@ -24,13 +48,14 @@
   padding: 0;
 }
 
-.site-header .header-container .main-nav li {
-  margin-left: 30px;
+.site-header .header-container .main-nav ul li {
+  margin-left: 20px;
 }
 
-.site-header .header-container .main-nav a {
+.site-header .header-container .main-nav ul li a {
   color: #555;
   text-decoration: none;
+  font-size: 0.7rem;
   font-weight: 500;
   transition: color 0.3s;
   padding: 5px 0;
@@ -56,16 +81,39 @@
   width: 100%;
 }
 
-@media (max-width: 600px) {
-  .header-container {
+.site-header .header-container .main-mode {
+  display: flex;
+  align-items: center;
+}
+
+.site-header .header-container .main-mode .brightmode-change {
+  display: none;
+}
+
+@media (max-width: 968px) {
+  .site-header .header-container {
     flex-direction: column;
+    padding: 15px 5px;
+  }
+
+  .site-header .header-container .main-nav {
+    width: 100%;
   }
 
   .site-header .header-container .main-nav ul {
-    justify-content: center;
+    overflow: scroll;
+    white-space: nowrap;
+    padding: 10px 0;
   }
   
   .site-header .header-container .main-nav li {
     margin: 0 15px;
+    display: block;
+    margin-left: 15px;
+  }
+
+  .site-header .header-container .main-nav ul li a {
+    font-size: 0.6rem;
+    padding: 3px 0;
   }
 }
