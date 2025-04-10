@@ -30,3 +30,8 @@
 .career-content .career-timeline .timeline-chart > ol > li > div > .timeline-title { font-size: 1rem; font-weight: bolder; margin: 0.5rem 0; }
 .career-content .career-timeline .timeline-chart > ol > li > div > .timeline-title > span { font-size: 0.5rem; font-weight: 300; margin-left: 1rem; }
 .career-content .career-timeline .timeline-chart > ol > li > div > .timeline-subtitle { font-size: 0.7rem; font-weight: 300; margin: 0.1rem 0; }
+
+@media screen and (max-width:1024px) {
+    .career-container .career-content .career-top { flex-direction: column; gap: 1rem; }
+    .career-container .career-content .career-top .career-img { max-width: 70%; margin: 0 auto; }
+}
