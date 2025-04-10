@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Career.css';
 
+// 이미지 파일 import
+import careerImg from '../assets/career-img.jpg';
+import downloadIcon from '../assets/career-data-download.svg';
+
 function Career() {
   return (
     <div className="career-container container">
@@ -10,7 +14,7 @@ function Career() {
       <section className="career-content section-content">
         <div className='career-top'>
           <div className="career-img">
-            <img src="./src/assets/career-img.jpg" />
+            <img src={careerImg} alt="Career" />
           </div>
           <div className="career-data">
             <p>대학 창업동아리부터 기업 형태로 발전하면서 창업 생태계를 직접 경험하였으며, 이를 통해 예비 창업자과 초기 창업기업이 정말로 필요한 부분이 어떤 것인지 잘 인지하고 있습니다.<br />
@@ -31,7 +35,7 @@ function Career() {
                 </li>
               </ul>
             </div>
-            <a href="" download>Download CV<img src="./src/assets/career-data-download.svg" /></a>
+            <a href="" download>Download CV<img src={downloadIcon} alt="Download" /></a>
           </div>
         </div>
         <div className="career-timeline">
@@ -135,8 +139,6 @@ function Career() {
           </div>
         </div>
       </section>
-
-
     </div>
   );
 }
