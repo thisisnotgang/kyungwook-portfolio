@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Career.css';
 
@@ -7,6 +7,14 @@ import careerImg from '../assets/career-img.jpg';
 import downloadIcon from '../assets/career-data-download.svg';
 
 function Career() {
+  // 활성 탭 상태 관리 (초기값은 'work')
+  const [activeTab, setActiveTab] = useState('work');
+
+  // 탭 전환 함수
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+  };
+
   return (
     <div className="career-container container">
       <h2 className="section-title">CAREER</h2>
@@ -40,11 +48,10 @@ function Career() {
         </div>
         <div className="career-timeline">
           <div className="timeline-nav">
-            <button className="timeline-work-nav">Work</button>
-            <button className="timeline-edu-nav">Education</button>
+            <button className={`timeline-work-nav ${activeTab === 'work' ? 'active' : ''}`} onClick={() => handleTabChange('work')}>Work</button>
+            <button className={`timeline-edu-nav ${activeTab === 'edu' ? 'active' : ''}`}onClick={() => handleTabChange('edu')}>Education</button>
           </div>
-
-          <div className='timeline-chart timeline-work'>
+          <div className='timeline-chart timeline-work' style={{ display: activeTab === 'work' ? 'block' : 'none' }}>
             <ol>
               <li>
                 <div>
@@ -91,7 +98,7 @@ function Career() {
               <li></li>
             </ol>
           </div>
-          <div className='timeline-chart timeline-edu'>
+          <div className='timeline-chart timeline-edu' style={{ display: activeTab === 'edu' ? 'block' : 'none' }}>
             <ol>
               <li>
                 <div> 

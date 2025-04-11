@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 
+// 이미지 파일 import
+import darkmodeImg from '../assets/header-darkmode-change.svg';
+import brightmodeImg from '../assets/header-brightmode-change.svg';
+
 function Header() {
   return (
     <header className="site-header">
@@ -14,7 +18,7 @@ function Header() {
           <ul>
             <li><Link to="/">INTRO</Link></li>
             <li><Link to="/">HISTORY</Link></li>
-            <li><Link to="/">SUPPORT MEASURE</Link></li>
+            <li><Link to="/">GOV SUPPORT PROJECTS</Link></li>
             <li><Link to="/">SKILLS</Link></li>
             <li><Link to="/">AWARDS</Link></li>
             <li><Link to="/">PROJECTS</Link></li>
@@ -25,8 +29,8 @@ function Header() {
         </nav>
 
         <div className="main-mode">
-          <img src="./src/assets/header-darkmode-change.svg" className="darkmode-change" />
-          <img src="./src/assets/header-brightmode-change.svg" className="brightmode-change" />
+          <img src={darkmodeImg} alt="Darkmode" className="darkmode-change" />
+          <img src={brightmodeImg} alt="Brightmode" className="brightmode-change" />
         </div>
         
       </div>
