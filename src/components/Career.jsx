@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Career.css';
 
@@ -12,8 +12,14 @@ function Career() {
 
   // 탭 전환 함수
   const handleTabChange = (tab) => {
+    console.log(`탭 변경: ${activeTab} -> ${tab}`);
     setActiveTab(tab);
   };
+
+  // 상태 변경 확인을 위한 useEffect 추가
+  useEffect(() => {
+    console.log(`현재 활성 탭: ${activeTab}`);
+  }, [activeTab]);
 
   return (
     <div className="career-container container">
@@ -48,10 +54,20 @@ function Career() {
         </div>
         <div className="career-timeline">
           <div className="timeline-nav">
-            <button className={`timeline-work-nav ${activeTab === 'work' ? 'active' : ''}`} onClick={() => handleTabChange('work')}>Work</button>
-            <button className={`timeline-edu-nav ${activeTab === 'edu' ? 'active' : ''}`}onClick={() => handleTabChange('edu')}>Education</button>
+            <button 
+              className={`timeline-work-nav ${activeTab === 'work' ? 'active' : ''}`} 
+              onClick={() => handleTabChange('work')}
+            >
+              Work
+            </button>
+            <button 
+              className={`timeline-edu-nav ${activeTab === 'edu' ? 'active' : ''}`} 
+              onClick={() => handleTabChange('edu')}
+            >
+              Education
+            </button>
           </div>
-          <div className='timeline-chart timeline-work' style={{ display: activeTab === 'work' ? 'block' : 'none' }}>
+          <div className={`timeline-chart timeline-work ${activeTab === 'work' ? 'active-tab' : 'hidden-tab'}`}>
             <ol>
               <li>
                 <div>
@@ -98,7 +114,7 @@ function Career() {
               <li></li>
             </ol>
           </div>
-          <div className='timeline-chart timeline-edu' style={{ display: activeTab === 'edu' ? 'block' : 'none' }}>
+          <div className={`timeline-chart timeline-edu ${activeTab === 'edu' ? 'active-tab' : 'hidden-tab'}`}>
             <ol>
               <li>
                 <div> 

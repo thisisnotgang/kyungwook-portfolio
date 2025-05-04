@@ -31,6 +31,15 @@
 .career-content .career-timeline .timeline-chart > ol > li > div > .timeline-title > span { font-size: 0.5rem; font-weight: 300; margin-left: 1rem; }
 .career-content .career-timeline .timeline-chart > ol > li > div > .timeline-subtitle { font-size: 0.7rem; font-weight: 300; margin: 0.1rem 0; }
 
+/* 탭 관련 스타일 (더 구체적인 선택자 사용) */
+.career-content .career-timeline .timeline-chart.active-tab {
+    display: flex;
+}
+  
+.career-content .career-timeline .timeline-chart.hidden-tab {
+    display: none !important; /* !important로 우선순위 강제 적용 */
+}
+
 @media screen and (max-width:1024px) {
     .career-container .career-content .career-top { flex-direction: column; gap: 1rem; }
     .career-container .career-content .career-top .career-img { max-width: 70%; margin: 0 auto; }
