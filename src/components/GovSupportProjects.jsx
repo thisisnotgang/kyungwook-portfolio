@@ -257,19 +257,10 @@ function Supportmeasure() {
 
   return (
     <div className="govsupportprojects-container container">
-      <h2 className="section-title">Support Measure</h2>
+      <h2 className="section-title">GOV SUPPORT PROJECTS</h2>
       <h3 className="section-subtitle">수행한 정부 및 지자체 지원사업입니다.</h3>
       <section className="govsupportprojects-content section-content">
         <div className="govsupportprojects-list-wrapper">
-          
-          {/* 페이지네이션 정보 */}
-          <div className="govsupportprojects-list-paging">
-            <p className="paging-now">{currentPage}</p>
-            <span>/</span>
-            <p className="paging-total">{totalPages}</p>
-          </div>
-
-
 
           {/* 슬라이드 컨테이너 */}
           <div 
@@ -315,6 +306,14 @@ function Supportmeasure() {
               >
               </button>
             ))}
+          </div>
+
+                    
+          {/* 페이지네이션 정보 */}
+          <div className="govsupportprojects-list-paging">
+            <p className="paging-now">{currentPage}</p>
+            <span>/</span>
+            <p className="paging-total">{totalPages}</p>
           </div>
 
         </div>

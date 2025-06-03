@@ -1,4 +1,4 @@
-.intro-container .intro-content { display: flex; flex-direction: column; gap: 5rem; }
+.intro-container .intro-content { display: flex; flex-direction: column; gap: 2rem; }
 .intro-container .intro-content .intro-top { display: flex; flex-direction: row-reverse; justify-content: space-between; width: 100%; padding-top: 5.5rem; }
 .intro-container .intro-content .intro-top .intro-img { width: 35%; margin-right: 2rem; }
 .intro-container .intro-content .intro-top .intro-img > img { width: 100%; border-radius: 50%; }
