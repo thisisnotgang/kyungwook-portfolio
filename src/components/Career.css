@@ -1,6 +1,6 @@
 .career-container .career-content .career-top { display: flex; justify-content: space-between; width: 100%; gap: 3rem; }
 .career-container .career-content .career-top .career-img { width: 100%; }
-.career-container .career-content .career-top .career-img > img { max-width: 100%; height: 100%; object-fit: cover; border-radius: 1rem; }
+.career-container .career-content .career-top .career-img > img { max-width: 100%; width: 100%; height: auto; object-fit: cover; border-radius: 1rem; image-rendering: auto; -webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 .career-container .career-content .career-top .career-data { width: 100%; display: flex; flex-direction: column; justify-content: space-between; }
 .career-container .career-content .career-top .career-data > p { font-size: 0.8rem; font-weight: 300; line-height: 1.5; }
 .career-container .career-content .career-top .career-data > a { font-size: 0.8rem; color: #fff; padding: 1rem; background-color: #6e57e0; border-radius: 0.5rem; margin-top: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }

@@ -14,6 +14,11 @@ function Header() {
           <p>이 경 욱</p><span>LEE KYUNG-WOOK</span>
         </div>
 
+        <div className="main-mode">
+          <img src={darkmodeImg} alt="Darkmode" className="darkmode-change" />
+          <img src={brightmodeImg} alt="Brightmode" className="brightmode-change" />
+        </div>
+
         <nav className="main-nav">
           <ul>
             <li><Link to="/">INTRO</Link></li>
@@ -26,13 +31,7 @@ function Header() {
             <li><Link to="/">LICENSE</Link></li>
             <li><Link to="/">CONTACT</Link></li>
           </ul>
-        </nav>
-
-        <div className="main-mode">
-          <img src={darkmodeImg} alt="Darkmode" className="darkmode-change" />
-          <img src={brightmodeImg} alt="Brightmode" className="brightmode-change" />
-        </div>
-        
+        </nav>     
       </div>
     </header>
   );

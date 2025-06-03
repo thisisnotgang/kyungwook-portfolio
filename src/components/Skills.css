@@ -1,0 +1,44 @@
+.skills-container .skills-content .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.skills-container .skills-content .skills-grid .skills-job { background: #fff; overflow: hidden; position: relative; isolation: isolate; }
+.skills-container .skills-content .skills-grid .skills-job .skills-header { display: flex; align-items: center; padding: 1.5rem; border-radius: 1rem; cursor: pointer; transition: background-color 0.3s ease; }
+.skills-container .skills-content .skills-grid .skills-job .skills-header:hover { background-color: #f8f9ff; }
+.skills-container .skills-content .skills-grid .skills-job .skills-header .skills-icon { width: 40px; height: 40px; background: #6e57e0; border-radius: 50%; margin-right: 1rem; flex-shrink: 0; }
+.skills-container .skills-content .skills-grid .skills-job .skills-header .skills-title { font-size: 1.2rem; font-weight: bold; color: #333; margin-bottom: 0.2rem; }
+.skills-container .skills-content .skills-grid .skills-job .skills-header .skills-subtitle { font-size: 0.8rem; color: #666; font-weight: 300; }
+.skills-container .skills-content .skills-grid .skills-job .skills-header .skills-arrow { margin-left: auto; width: 20px; height: 20px; position: relative; transition: transform 0.3s ease; }
+.skills-container .skills-content .skills-grid .skills-job .skills-header .skills-arrow::before { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 8px solid #666; transform: translate(-50%, -50%); transition: all 0.3s ease; }
+.skills-container .skills-content .skills-grid .skills-job .skills-header .skills-arrow::after { content: none; }
+.skills-container .skills-content .skills-grid .skills-job .skills-header.active .skills-arrow { transform: rotate(180deg); }
+.skills-container .skills-content .skills-grid .skills-job .skills-list { position: relative; margin-top: 0.5rem; padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease; opacity: 0; visibility: hidden; transform: translateY(-10px); }
+.skills-container .skills-content .skills-grid .skills-job .skills-list.active { max-height: 600px; padding: 0 1.5rem 1.5rem; opacity: 1; visibility: visible; transform: translateY(0); }
+.skills-container .skills-content .skills-grid .skills-job .skills-list .skills-data { margin-bottom: 1.5rem; }
+.skills-container .skills-content .skills-grid .skills-job .skills-list .skills-data:last-child { margin-bottom: 0; }
+.skills-container .skills-content .skills-grid .skills-job .skills-list .skills-data .skills-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+.skills-container .skills-content .skills-grid .skills-job .skills-list .skills-data .skills-title .skills-name { font-size: 0.9rem; font-weight: 500; color: #333; }
+.skills-container .skills-content .skills-grid .skills-job .skills-list .skills-data .skills-title .skills-number { font-size: 0.8rem; font-weight: 600; color: #6e57e0; }
+.skills-container .skills-content .skills-grid .skills-job .skills-list .skills-data .skills-bar { width: 100%; height: 6px; background: #f0f0f0; border-radius: 3px; overflow: hidden; }
+.skills-container .skills-content .skills-grid .skills-job .skills-list .skills-data .skills-bar .skills-percentage { display: block; height: 100%; background: linear-gradient(90deg, #6e57e0, #8b6ff7); border-radius: 3px; transition: width 0.8s ease; }
+
+/* Business Planner 스킬 퍼센티지 */
+.skills-container .skills-content .skills-grid .business-skill-1 { width: 90%; }
+.skills-container .skills-content .skills-grid .business-skill-2 { width: 90%; }
+.skills-container .skills-content .skills-grid .business-skill-3 { width: 80%; }
+.skills-container .skills-content .skills-grid .business-skill-4 { width: 60%; }
+
+/* Frontend Developer 스킬 퍼센티지 */
+.skills-container .skills-content .skills-grid .frontend-skill-1 { width: 80%; }
+.skills-container .skills-content .skills-grid .frontend-skill-2 { width: 80%; }
+.skills-container .skills-content .skills-grid .frontend-skill-3 { width: 60%; }
+.skills-container .skills-content .skills-grid .frontend-skill-4 { width: 60%; }
+
+/* Designer 스킬 퍼센티지 */
+.skills-container .skills-content .skills-grid .designer-skill-1 { width: 80%; }
+.skills-container .skills-content .skills-grid .designer-skill-2 { width: 60%; }
+.skills-container .skills-content .skills-grid .designer-skill-3 { width: 40%; }
+
+@media screen and (max-width: 768px) {
+    .skills-container .skills-content .skills-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .skills-container .skills-content .skills-grid .skills-job .skills-header { padding: 1.2rem; }
+    .skills-container .skills-content .skills-grid .skills-job .skills-header .skills-title { font-size: 1.1rem; }
+    .skills-container .skills-content .skills-grid .skills-job .skills-list.active { max-height: 500px; padding: 0 1.2rem 1.2rem; transform: translateY(0); }
+}

@@ -1,0 +1,18 @@
+.awards-container .awards-content { overflow-x: auto; }
+.awards-container .awards-content > table { width: 100%; min-width: 100%; font-size: 11px; text-align: center; border-collapse: collapse; }
+.awards-container .awards-content > table > thead > tr { border-bottom: 2px solid #e2e2e2; }
+.awards-container .awards-content > table > thead > tr > th { padding: 1rem 0.5rem; border-bottom: 2px solid #e2e2e2; font-weight: bold; background-color: #f8f9fa; white-space: nowrap; }
+.awards-container .awards-content > table > tbody > tr { border-bottom: 1px solid #f0f0f0; letter-spacing: -1.0px; }
+.awards-container .awards-content > table > tbody > tr > td { padding: 1rem 0.5rem; border-bottom: 1px solid #f0f0f0; vertical-align: top; white-space: nowrap; }
+.awards-container .awards-content > table > tbody > tr:hover { background-color: #f8f9ff; }
+
+/* 스크롤바 스타일링 (선택사항) */
+.awards-container .awards-content::-webkit-scrollbar { height: 8px; }
+.awards-container .awards-content::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+.awards-container .awards-content::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
+.awards-container .awards-content::-webkit-scrollbar-thumb:hover { background: #a1a1a1; }
+
+@media screen and (max-width: 768px) {
+    .awards-container .awards-content > table { font-size: 9px; min-width: 700px; }
+    .awards-container .awards-content > table > thead > tr > th, .awards-container .awards-content > table > tbody > tr > td { padding: 0.8rem 0.3rem; }
+}

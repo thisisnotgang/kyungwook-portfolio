@@ -26,11 +26,12 @@ function Career() {
           </div>
           <div className="career-data">
             <p>대학 창업동아리부터 기업 형태로 발전하면서 창업 생태계를 직접 경험하였으며, 이를 통해 예비 창업자과 초기 창업기업이 정말로 필요한 부분이 어떤 것인지 잘 인지하고 있습니다.<br />
+              현재는 기업과 기관의 창업/취업/직무 등의 역량강화 콘텐츠를 기반으로 교육과 캠프를 진행하는 회사에서 기획 및 운영을 총괄하는 교육운영팀장으로 재직 중입니다.<br />
               이러한 경험을 바탕으로, 타 창업자들에게 많은 도움을 주고 싶습니다. 단순 기획자 또는 교육자의 입장이 아닌, 실제로 창업 생태계를 겪어 본 실무자로서 경험을 공유하고 싶습니다.</p>
             <div className='career-count'>
               <ul>
                 <li>
-                  <p>01 ~ 02</p>
+                  <p>02+</p>
                   <span>경력</span>
                 </li>
                 <li>
@@ -66,6 +67,16 @@ function Career() {
           {activeTab === 'work' && (
             <div className='timeline-chart timeline-work'>
               <ol>
+                <li>
+                  <div>
+                    <p className="timeline-date">2025.04.14. ~ </p>
+                    <p className="timeline-title">(주)워너비즈<span>재직중</span></p>
+                    <p className="timeline-subtitle"><strong>교육운영팀장 | 창업/취업/직무 등의 교육 및 캠프 기획&운영 총괄</strong></p>
+                    <p className="timeline-subtitle">고교 및 대학 취창업 교육과 캠프의 프로그램 기획 및 운영 총괄</p>
+                    <p className="timeline-subtitle">기업 및 기관의 역량 강화 교육 및 워크숍 프로그램 기획 및 운영 총괄</p>
+                    <p className="timeline-subtitle">자사 블로그 및 인스타그램 콘텐츠 기획/디자인/관리 총괄</p>
+                  </div>
+                </li>
                 <li>
                   <div>
                     <p className="timeline-date">2024.08.31. ~ 2024.12.07.</p>

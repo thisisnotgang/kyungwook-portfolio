@@ -2,6 +2,8 @@ import React from 'react'
 import Intro from '../src/components/Intro'
 import Career from '../src/components/Career'
 import GovSupportProjects from '../src/components/GovSupportProjects'
+import Skills from '../src/components/Skills'
+import Awards from '../src/components/Awards'
 import './App.css'
 
 function App() {
@@ -10,6 +12,8 @@ function App() {
       <Intro />
       <Career />
       <GovSupportProjects />
+      <Skills />
+      <Awards />
     </div>
   )
 }
