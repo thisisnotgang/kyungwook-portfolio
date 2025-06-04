@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Career.css';
 
@@ -9,10 +9,49 @@ import downloadIcon from '../assets/career-data-download.svg';
 function Career() {
   // 활성 탭 상태 관리 (초기값은 'work')
   const [activeTab, setActiveTab] = useState('work');
+  
+  // 드래그 스크롤 관련 상태
+  const timelineRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
   // 탭 전환 함수
   const handleTabChange = (tab) => {
     setActiveTab(tab);
+  };
+
+  // 마우스 드래그 시작
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - timelineRef.current.offsetLeft);
+    setScrollLeft(timelineRef.current.scrollLeft);
+    timelineRef.current.style.cursor = 'grabbing';
+  };
+
+  // 마우스 드래그 종료
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    if (timelineRef.current) {
+      timelineRef.current.style.cursor = 'grab';
+    }
+  };
+
+  // 마우스 드래그 중
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - timelineRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // 스크롤 속도 조절
+    timelineRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  // 마우스가 컨테이너를 벗어날 때
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+    if (timelineRef.current) {
+      timelineRef.current.style.cursor = 'grab';
+    }
   };
 
   return (
@@ -25,9 +64,8 @@ function Career() {
             <img src={careerImg} alt="Career" />
           </div>
           <div className="career-data">
-            <p>대학 창업동아리부터 기업 형태로 발전하면서 창업 생태계를 직접 경험하였으며, 이를 통해 예비 창업자과 초기 창업기업이 정말로 필요한 부분이 어떤 것인지 잘 인지하고 있습니다.<br />
-              현재는 기업과 기관의 창업/취업/직무 등의 역량강화 콘텐츠를 기반으로 교육과 캠프를 진행하는 회사에서 기획 및 운영을 총괄하는 교육운영팀장으로 재직 중입니다.<br />
-              이러한 경험을 바탕으로, 타 창업자들에게 많은 도움을 주고 싶습니다. 단순 기획자 또는 교육자의 입장이 아닌, 실제로 창업 생태계를 겪어 본 실무자로서 경험을 공유하고 싶습니다.</p>
+          <p>&nbsp;&nbsp;대학 창업동아리부터 이를 실제 기업 형태까지 발전시키며 창업 생태계를 직접 경험하였습니다. 이 과정에서 스타트업의 니즈가 무엇인지 몸소 체험하며 깊이 이해하게 되었습니다.<br />
+          &nbsp;&nbsp;현재는 직접 창업보다는 축적된 경험을 바탕으로 스타트업을 돕는 것에 목표를 두고 있습니다. 창업 컨설턴트 및 멘토를 지향하며, 그 과정의 일환으로 기업과 기관의 창업/취업/직무 등의 역량강화 콘텐츠를 기반으로 교육과 캠프를 진행하는 회사에서 교육운영팀장으로 재직 중입니다.</p>
             <div className='career-count'>
               <ul>
                 <li>
@@ -36,11 +74,11 @@ function Career() {
                 </li>
                 <li>
                   <p>10+</p>
-                  <span>수행한<br />정부/지자체 지원사업 수</span>
+                  <span>수행 정부/지자체 지원사업</span>
                 </li>
                 <li>
                   <p>04+</p>
-                  <span>기획/운영한<br />서비스 수</span>
+                  <span>기획/운영한 서비스</span>
                 </li>
               </ul>
             </div>
@@ -65,7 +103,15 @@ function Career() {
           
           {/* Work 탭 - 조건부 렌더링으로 변경 */}
           {activeTab === 'work' && (
-            <div className='timeline-chart timeline-work'>
+            <div 
+              className='timeline-chart timeline-work'
+              ref={timelineRef}
+              onMouseDown={handleMouseDown}
+              onMouseUp={handleMouseUp}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              style={{ cursor: 'grab' }}
+            >
               <ol>
                 <li>
                   <div>
@@ -126,7 +172,15 @@ function Career() {
           
           {/* Education 탭 - 조건부 렌더링으로 변경 */}
           {activeTab === 'edu' && (
-            <div className='timeline-chart timeline-edu'>
+            <div 
+              className='timeline-chart timeline-edu'
+              ref={timelineRef}
+              onMouseDown={handleMouseDown}
+              onMouseUp={handleMouseUp}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              style={{ cursor: 'grab' }}
+            >
               <ol>
                 <li>
                   <div> 

@@ -3,7 +3,7 @@
 .awards-container .awards-content > table > thead > tr { border-bottom: 2px solid #e2e2e2; }
 .awards-container .awards-content > table > thead > tr > th { padding: 1rem 0.5rem; border-bottom: 2px solid #f0f0f0; font-weight: bold; background-color: #f8f9ff; white-space: nowrap; }
 .awards-container .awards-content > table > tbody > tr { border-bottom: 1px solid #f0f0f0; letter-spacing: -1.0px; font-weight: 200; }
-.awards-container .awards-content > table > tbody > tr > td { padding: 1rem 0.5rem; border-bottom: 1px solid #f0f0f0; vertical-align: top; white-space: nowrap; }
+.awards-container .awards-content > table > tbody > tr > td { padding: 1rem 0.5rem; border-bottom: 1px solid #f0f0f0; vertical-align: center; white-space: nowrap; }
 .awards-container .awards-content > table > tbody > tr:hover { background-color: #f8f9ff; }
 
 /* 스크롤바 스타일링 (선택사항) */

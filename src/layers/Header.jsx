@@ -23,10 +23,10 @@ function Header() {
           <ul>
             <li><Link to="/">INTRO</Link></li>
             <li><Link to="/">HISTORY</Link></li>
+            <li><Link to="/">PORTFOLIO</Link></li>
             <li><Link to="/">GOV SUPPORT PROJECTS</Link></li>
             <li><Link to="/">SKILLS</Link></li>
             <li><Link to="/">AWARDS</Link></li>
-            <li><Link to="/">PROJECTS</Link></li>
             <li><Link to="/">MEDIA</Link></li>
             <li><Link to="/">LICENSE</Link></li>
             <li><Link to="/">CONTACT</Link></li>
